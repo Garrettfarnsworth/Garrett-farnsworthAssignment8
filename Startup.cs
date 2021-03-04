@@ -58,11 +58,23 @@ namespace OnlineBookStore
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
+            { //This code is for the pagination that we are doing and this controls the dynamic output of pages based on the database and how many pages are needed.
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index", page = 1});
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
                 endpoints.MapControllerRoute(
                     "pagination",
                     "P/{page}",
-                    new { Controller = "Home", action = "Index"});
+                    new { Controller = "Home", action = "Index", page = 1});
 
             endpoints.MapDefaultControllerRoute();
             });
