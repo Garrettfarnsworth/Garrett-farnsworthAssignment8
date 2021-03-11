@@ -9,24 +9,35 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
 </head>
 
-    <body class="active" style="background-color: #FEE9E1">
-        <div class="bg-dark text-white p-2">
-            <span class="navbar-brand ml-2 font-weight-bold">Online Book Store</span>
-        </div>
+<body class="active" style="background-color: #FEE9E1">
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2 font-weight-bold">Online Book Store</span>
+    </div>
 
-        <div class="text-center row m-1 p-1">
-            <div id="blah" class="col-3">
-                <h1 class="display-4 bg-secondary">Online Book Store</h1>
-                <vc:navigation-menu />
-                <br />
-            </div>
-            <div class="col-9 p-2">
-                @RenderBody()
-                <footer class="text-center bg-dark text-white font-weight-bold p-1 m-1">
-                    Assignment #5 | Garrett Farnsworth | Online Book Store
-                </footer>
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">BOOK STORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <div class="text-center row m-1 p-1">
+        <div id="blah" class="col-3">
+            <h1 class="display-4 bg-secondary">Online Book Store</h1>
+            <vc:navigation-menu />
+            <br />
+        </div>
+        <div class="col-9 p-2">
+            @RenderBody()
+            <footer class="text-center bg-dark text-white font-weight-bold p-1 m-1">
+                Assignment #5 | Garrett Farnsworth | Online Book Store
+            </footer>
+        </div>
+    </div>
+</body>
 </html>
 

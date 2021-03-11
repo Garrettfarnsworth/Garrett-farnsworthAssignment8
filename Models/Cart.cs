@@ -31,7 +31,7 @@ namespace OnlineBookStore.Models
                 Line.Quantity += qty;
             }
         }
-
+        //Code for removing a line object.
         public void RemoveLine(Books books) => 
             Lines.RemoveAll(x => x.Books.BookId == books.BookId);
 
