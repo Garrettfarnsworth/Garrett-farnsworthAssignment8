@@ -24,19 +24,19 @@ namespace OnlineBookStore.Controllers
             _respository = respository;
         }
         //Passes our repository of Books.
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
             return View(new BookListViewModel
             {
                 Book = _respository.Books //Controls the dynamic output of our page based on the categories.
                     .Where(p => category == null || p.Category == category)
                     .OrderBy(p => p.BookId)
-                    .Skip((page - 1) * PageSize)
+                    .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize)
                 ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = category == null ? _respository.Books.Count() :
                     _respository.Books.Where (x => x.Category == category).Count()

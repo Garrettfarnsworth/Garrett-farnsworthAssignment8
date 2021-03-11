@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineBookStore.Infastructure
+namespace OnlineBookStore.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTabHelper : TagHelper
@@ -45,7 +45,7 @@ namespace OnlineBookStore.Infastructure
             {
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, 
                     PageUrlValues);
 
